@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "admin user",
+      "email": "admin@demoapp.com",
+      "active": "1",
+      "password": "demoapp123"
+    },
+    {
+      "id": "2",
+      "name": "Athul Thomas",
+      "email": "athulthomas001798@gmail.com",
+      "active": "0"
+    },
+    {
+      "id": "3",
+      "name": "Ajil Thomas",
+      "email": "ajil@gmail.com",
+      "active": "1"
+    },
+    {
+      "id": "4",
+      "name": "jolly Thomas",
+      "email": "thomas@gmail.com",
+      "active": "0"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+<div class="d-flex border border-light">
+  <!-- sidebar -->
+  <div
+    class="sidebar bg-info p-3 d-flex flex-column"
+    style="width: 200px; height: 100vh"
+  >
+    <a routerLink="/home">Home</a>
+    <a routerLink="/users">Users</a>
+  </div>
+
+  <!-- dashboard -->
+
+  <div class="dashboard p-3 w-100">
+    <!-- title -->
+
+    <div class="title d-flex justify-content-between">
+      <h1>User-List:{{today|date:'fullTime'}}</h1>
+      <button class="btn btn-outline-warning" routerLink="add">
+        <i class="fa-solid fa-user-plus"></i>Add
+      </button>
+    </div>
+
+    <div class="d-flex align-items-center m-5">
+
+      Search :<input type="text" [(ngModel)]="searchKey" name="searchKey"  class="form-control ms-2 w-50" placeholder="Search by Username">
+
+    </div>
+
+    <!-- table -->
+
+    <div class="table mt-3">
+      <table class="table shadow border p-2">
+        <thead>
+          <tr>
+            <th>userId</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of allusers |search:searchKey:'name' ">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+              <span [ngClass]="user.active === '1' ? 'Active' : 'Inactive'">{{
+                user.active === "1" ? "Active" : "Inactive"
+              }}</span>
+            </td>
+            <td>
+              <!-- edit -->
+              <a class="me-3 text-success btn" routerLink="edit/{{ user.id }}"
+                ><i class="fa-solid fa-pen"></i
+              ></a>
+              <!-- delete -->
+              <a class="btn text-danger" (click)="deleteuser(user.id)"
+                ><i class="fa-solid fa-trash"></i
+              ></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

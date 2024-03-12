@@ -1,0 +1,50 @@
+<div class="d-flex border border-light">
+  <!-- sidebar -->
+  <div
+    class="sidebar bg-info p-3 d-flex flex-column"
+    style="width: 200px; height: 100vh"
+  >
+    <a routerLink="home">Home</a>
+    <a routerLink="/users">Users</a>
+  </div>
+
+  <!-- dashboard -->
+
+  <div class="dashboard p-3 w-100">
+    <div class="row">
+      <div class="col-8">
+        <div class="admin-pannel border rounded" style="height: 150px; background-image:url('https://img.freepik.com/free-photo/vibrant-colors-blend-abstract-backdrop-pattern-generated-by-ai_188544-9565.jpg?size=626&ext=jpg&ga=GA1.1.672697106.1709769600&semt=ais');background-size: cover;">
+          <h1 class="text-light text-center py-5 fw-bold">Welcome Admin</h1>
+        </div>
+
+        <div class="row mt-2">
+          <div  style="height:400px" class="col-6 border rounded">
+            <app-calender></app-calender>
+          </div>
+          <div class="col-6 border rounded" style="height: 150px">Quotes</div>
+        </div>
+
+        <div class="mt-2 row border rounded" style="height: 250px">
+          <app-graph></app-graph>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="admin-details border rounded p-2" style="height: 400px">
+          <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Enter Username" />
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Enter Password" />
+            </mat-form-field>
+            <button mat-raised-button color="primary">Login</button>
+          </form>
+        </div>
+
+        <div class="random-user border rounded p-3 mt-4" style="height: 200px">
+          random user
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
